@@ -1,0 +1,66 @@
+name: Bunnimage
+on:
+  push:
+    branches:
+      - bunnimage
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Setup Node Environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Get Count
+        id: vars
+        run: echo ::set-output name=count::$(cat ./.bit/.progress)
+
+      - name: Step 1
+        if: ${{steps.vars.outputs.count == 26 && github.event.head_commit.message != 'Update progress'}}
+        env:
+          storage_account_connection_string: ${{ secrets.storage_account_connection_string }}
+          container_name: ${{ secrets.container_name }}
+        run: |
+          npm install @azure/storage-blob
+          node .bit/tests/test.3.1.js
+      - name: Step 2
+        if: ${{steps.vars.outputs.count == 27 && github.event.head_commit.message != 'Update progress'}}
+        env:
+          BUNNIMAGE_ENDPOINT: ${{ secrets.BUNNIMAGE_ENDPOINT }}
+          container_name: ${{ secrets.container_name }}
+          blob_url: ${{ secrets.blob_url }}
+        run: |
+          npm install node-fetch
+          npm install form-data
+          node .bit/tests/test.3.2.js
+      - name: Step 3
+        if: ${{steps.vars.outputs.count == 28 && github.event.head_commit.message != 'Update progress'}}
+        env:
+          BUNNIMAGE_ENDPOINT: ${{ secrets.BUNNIMAGE_ENDPOINT }}
+          container_name: ${{ secrets.container_name }}
+          blob_url: ${{ secrets.blob_url }}
+        run: |
+          npm install node-fetch
+          npm install form-data
+          node .bit/tests/test.3.3.js
+      - name: Step 5
+        if: ${{steps.vars.outputs.count == 30 && github.event.head_commit.message != 'Update progress'}}
+        env:
+          BUNNIMAGE_ENDPOINT: ${{ secrets.BUNNIMAGE_ENDPOINT }}
+          BUNNIMAGE_ENDPOINT2: ${{ secrets.BUNNIMAGE_ENDPOINT2 }}
+          container_name: ${{ secrets.container_name }}
+          blob_url: ${{ secrets.blob_url }}
+        run: |
+          npm install node-fetch
+          npm install form-data
+          node .bit/tests/test.3.5.js
+      - name: Check for branch
+        if: ${{steps.vars.outputs.count > 30 && github.event.head_commit.message != 'Update progress'}}
+        run: |
+          node .bit/tests/wrongbranch.js
