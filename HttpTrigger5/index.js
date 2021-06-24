@@ -16,5 +16,3 @@ module.exports = async function (context, req) {
         body: base64data
     };
 }
-
-//https://cataas.com/cat/cute/says/Serverless
