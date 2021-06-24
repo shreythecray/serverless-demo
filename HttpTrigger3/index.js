@@ -11,9 +11,6 @@ module.exports = async function (context, req) {
         your_response = "Access denied."
     }
 
-    // let your_response = (password == "letmein") ?
-    //     "Access granted." : "Access denied."
-
     context.res = {
         // status: 200, /* Defaults to 200 */
         body: your_response
