@@ -7,7 +7,9 @@
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
+    "fetch": "^1.1.0",
     "morse-code-converter": "^1.0.2",
+    "node-fetch": "^2.6.1",
     "parse-multipart": "^1.0.4"
   },
   "main": "index.js",
