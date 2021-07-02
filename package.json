@@ -1,12 +1,28 @@
 {
   "name": "serverless-demo",
   "version": "1.0.0",
-  "description": "",
+  "description": "![Newsletter](https://user-images.githubusercontent.com/69332964/114803220-14269100-9d6d-11eb-9a3a-e92a637e5d79.png)",
   "scripts": {
     "start": "func start",
     "test": "echo \"No tests yet...\""
   },
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shreythecray/serverless-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shreythecray/serverless-demo/issues"
+  },
+  "homepage": "https://github.com/shreythecray/serverless-demo#readme",
   "dependencies": {
-    "morse-code-converter": "^1.0.2"
+    "node-fetch": "^2.6.1",
+    "parse-multipart": "^1.0.4"
   }
 }
