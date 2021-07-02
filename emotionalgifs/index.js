@@ -9,14 +9,18 @@ module.exports = async function (context, req) {
 
     var result = await analyzeImage(image)
 
+    let emotions = result[0].faceAttributes.emotion;
+    let objects = Object.values(emotions); //[0, 0, 1, 0, 0]
+
+    const main_emotion = Object.keys(emotions).find(key => emotions[key] === Math.max(...objects));
+
     context.res = {
         // status: 200, /* Defaults to 200 */
-        body: result
+        body: { main_emotion }
     };
 }
 
 async function analyzeImage(img) {
-    //CHANGE VALUES WHILE TESTING
     const subscriptionKey = process.env.FACEAPI_KEY1;
     const uriBase = process.env.FACEAPI_ENDPOINT + '/face/v1.0/detect';
 
