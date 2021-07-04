@@ -44,8 +44,8 @@ if (uri1[0] == null || uri2[1] == null) {
                 console.log("Yay! 🎉 We got our picture!")
             } else {
                 console.log("Hmmm... Maybe take another look at that download function.")
-                console.log(message.downloadUri)
-                console.log(`${blob_url}/${containerName}/bunnimagetestrun1001.jpeg`)
+                console.log("We got: "message.downloadUri)
+                console.log("We should have got: " + `${blob_url}/${containerName}/bunnimagetestrun1001.jpeg`)
                 process.exit(1)
             }
         } catch (e) {
