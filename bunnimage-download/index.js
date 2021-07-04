@@ -11,7 +11,7 @@ module.exports = async function (context, req) {
     //test if it's png
     var downloadpng = "https://" + blogname + ".blob.core.windows.net/images/" + username + ".png";
     //test if it's jpg
-    var downloadjpg = "https://" + blogname + ".blob.core.windows.net/images/" + username + ".jpg";
+    var downloadjpg = "https://" + blogname + ".blob.core.windows.net/images/" + username + ".jpeg";
     //we didn't change anything
 
     let pngresp = await fetch(downloadpng, {
