@@ -6,6 +6,10 @@
     "start": "func start",
     "test": "echo \"No tests yet...\""
   },
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "querystring": "^0.2.1"
+  },
   "main": "index.js",
   "directories": {
     "example": "example"
@@ -20,9 +24,5 @@
   "bugs": {
     "url": "https://github.com/shreythecray/serverless-demo/issues"
   },
-  "homepage": "https://github.com/shreythecray/serverless-demo#readme",
-  "dependencies": {
-    "node-fetch": "^2.6.1",
-    "parse-multipart": "^1.0.4"
-  }
+  "homepage": "https://github.com/shreythecray/serverless-demo#readme"
 }
