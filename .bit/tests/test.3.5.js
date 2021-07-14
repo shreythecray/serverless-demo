@@ -6,8 +6,8 @@ const FormData = require('form-data');
 
 uri1 = process.env.BUNNIMAGE_ENDPOINT
 uri2 = process.env.BUNNIMAGE_ENDPOINT2
-const blob_url = process.env.blob_url
-const containerName = process.env.container_name
+const blob_url = "https://whateveriwant.blob.core.windows.net"
+const containerName = "images"
 
 if (uri1[0] == null || uri2[1] == null) {
     throw new Error("You have not added your function url as a secret!");
@@ -44,7 +44,7 @@ if (uri1[0] == null || uri2[1] == null) {
                 console.log("Yay! 🎉 We got our picture!")
             } else {
                 console.log("Hmmm... Maybe take another look at that download function.")
-                console.log(message.downloadUri)
+                console.log(JSON.stringify(message.downloadUri))
                 console.log(`${blob_url}/${containerName}/bunnimagetestrun1001.jpeg`)
                 process.exit(1)
             }
