@@ -3,17 +3,34 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>The best form</title>
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-      <div>
-              <h1 id="h1">Give your code some love ❤️</h1>
-              <form>
-                  <label>Code: </label>
-                  <input type="text" id="name" name="name" /><br>
-                  <input value="Submit" type="button" />
-              </form>
+    <!-- import jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+  <body>
+      <div class="container h-mt-5">
+          <div class="c-well">
+              <h1 id="h1">Bunnimage 🐇</h1>
+                  <form id="myform" onsubmit="getImage(event)" enctype="multipart/form-data">
+                    <input id="image" class="label" type="file"  accept="image/x-png,image/jpeg" name="image"></input>
+                    <input id="username" type="text" class="c-form-input" placeholder="Enter your file's name">
+                    <br></br>
+                    <input class="c-btn c-btn--primary" type="submit" value="Submit Your Picture 📷"></input>
+
+                    <br><br>
+
+                    <input id="downloadusername"> </input>
+                    <input id="button2" class="c-btn c-btn--primary" type="button" value="Download" onclick="downloadImage()"></input>
+                </form>
               <br/>
-              <div id="output"></div>
+              <div id="output" class="h-mb-4"></div>
+              <img id="coffee" src="giphy.gif" />
+          </div>
         </div>
+        <p style="text-align: center;">Bitprj © 2021</p>
     </body>  
+</html>
