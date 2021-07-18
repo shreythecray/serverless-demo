@@ -7,7 +7,6 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <!-- import jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="./script.js"></script>
   </body>
@@ -15,19 +14,19 @@
       <div class="container h-mt-5">
           <div class="c-well">
               <h1 id="h1">Bunnimage 🐇</h1>
+                  <h2> Upload </h2>
                   <form id="myform" onsubmit="getImage(event)" enctype="multipart/form-data">
-                    <input id="image" class="label" type="file"  accept="image/x-png,image/jpeg" name="image"></input>
+                    <input class="label" type="file"  accept="image/x-png,image/jpeg" name="image"></input>
                     <input id="username" type="text" class="c-form-input" placeholder="Enter your file's name">
                     <br></br>
-                    <input class="c-btn c-btn--primary" type="submit" value="Submit Your Picture 📷"></input>
-
-                    <br><br>
-
-                    <input id="downloadusername"> </input>
-                    <input id="button2" class="c-btn c-btn--primary" type="button" value="Download" onclick="downloadImage()"></input>
+                    <input id="button1" class="c-btn c-btn--primary" type="submit" value="Submit Your Picture 📷"></input>
                 </form>
               <br/>
               <div id="output" class="h-mb-4"></div>
+              <h2> Download </h2>
+              <input id="downloadusername" type="text" class="c-form-input" placeholder="Enter your file's name">
+              <br></br>
+              <input id="button2" class="c-btn c-btn--primary" type="submit" value="Download Your Picture 📷" onclick="downloadImage()"></input>
               <img id="coffee" src="giphy.gif" />
           </div>
         </div>
